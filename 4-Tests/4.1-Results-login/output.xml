@@ -1,0 +1,782 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0.1 (Python 3.12.6 on win32)" generated="2024-10-07T02:38:50.985003" rpa="false" schemaversion="5">
+<suite id="s1" name="Login-Test" source="C:\Users\ThodT\Downloads\GitHub\test-automation-fo-sauce-demo\4-Tests\login-test.robot">
+<kw name="เปิดเบราว์เซอร์เต็มหน้าจอ และ ไปยัง URL ที่กำหนด" owner="common-resources" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-10-07T02:38:51.263918" level="INFO">Opening browser 'Chrome' to base url 'https://www.saucedemo.com/'.</msg>
+<msg time="2024-10-07T02:38:51.601532" level="WARN">The chromedriver version (128.0.6613.120) detected in PATH at C:\webdrivers\chromedriver.exe might not be compatible with the detected chrome version (129.0.6668.90); currently, chromedriver 129.0.6668.89 is recommended for chrome 129.*, so it is advised to delete the driver in PATH and retry</msg>
+<arg>${URL_Main}</arg>
+<arg>${Browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-10-07T02:38:51.263918" elapsed="2.045786"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2024-10-07T02:38:53.309704" elapsed="0.060481"/>
+</kw>
+<status status="PASS" start="2024-10-07T02:38:51.262883" elapsed="2.107302"/>
+</kw>
+<test id="s1-t1" name="TC-Login-001: ตรวจสอบ Login" line="13">
+<kw name="เครียร์ข้อมูลช่อง Username และ Password" owner="login-keywords" type="SETUP">
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2024-10-07T02:38:53.374177" level="INFO">Sending key(s) ('CTRL+A', 'BACKSPACE') to id=user-name element.</msg>
+<msg time="2024-10-07T02:38:53.707240" level="INFO">Pressing special key CONTROL down.</msg>
+<msg time="2024-10-07T02:38:53.707240" level="INFO">Sending key A</msg>
+<msg time="2024-10-07T02:38:53.707240" level="INFO">Releasing special key CONTROL.</msg>
+<msg time="2024-10-07T02:38:53.715227" level="INFO">Pressing special key BACKSPACE to element.</msg>
+<msg time="2024-10-07T02:38:53.715227" level="INFO">Releasing special key BACKSPACE.</msg>
+<arg>id=user-name</arg>
+<arg>CTRL+A</arg>
+<arg>BACKSPACE</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2024-10-07T02:38:53.372176" elapsed="0.349051"/>
+</kw>
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2024-10-07T02:38:53.722228" level="INFO">Sending key(s) ('CTRL+A', 'BACKSPACE') to id=password element.</msg>
+<msg time="2024-10-07T02:38:54.017227" level="INFO">Pressing special key CONTROL down.</msg>
+<msg time="2024-10-07T02:38:54.017227" level="INFO">Sending key A</msg>
+<msg time="2024-10-07T02:38:54.017227" level="INFO">Releasing special key CONTROL.</msg>
+<msg time="2024-10-07T02:38:54.026227" level="INFO">Pressing special key BACKSPACE to element.</msg>
+<msg time="2024-10-07T02:38:54.026227" level="INFO">Releasing special key BACKSPACE.</msg>
+<arg>id=password</arg>
+<arg>CTRL+A</arg>
+<arg>BACKSPACE</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2024-10-07T02:38:53.721227" elapsed="0.311026"/>
+</kw>
+<status status="PASS" start="2024-10-07T02:38:53.372176" elapsed="0.660077"/>
+</kw>
+<kw name="พิมพ์ Username และ Password" owner="login-keywords">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-10-07T02:38:54.034227" level="INFO">Typing text '' into text field 'user-name'.</msg>
+<arg>user-name</arg>
+<arg>${Username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-07T02:38:54.034227" elapsed="0.105061"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-10-07T02:38:54.139288" level="INFO">Typing text '' into text field 'password'.</msg>
+<arg>password</arg>
+<arg>${Password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-07T02:38:54.139288" elapsed="0.084511"/>
+</kw>
+<arg>${EMPTY}</arg>
+<arg>${EMPTY}</arg>
+<status status="PASS" start="2024-10-07T02:38:54.032253" elapsed="0.191546"/>
+</kw>
+<kw name="คลิกปุ่ม Login" owner="login-keywords">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-10-07T02:38:54.224835" level="INFO">Clicking button 'login-button'.</msg>
+<arg>login-button</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-07T02:38:54.224835" elapsed="0.071529"/>
+</kw>
+<status status="PASS" start="2024-10-07T02:38:54.224835" elapsed="0.071529"/>
+</kw>
+<kw name="ตรวจสอบว่าข้อความแจ้งเตือน ผู้ใช้" owner="login-keywords">
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-10-07T02:38:54.319362" level="INFO">${Error_Message} = Epic sadface: Username is required</msg>
+<var>${Error_Message}</var>
+<arg>css=.error-message-container h3</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-07T02:38:54.297367" elapsed="0.021995"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>message=ข้อความแจ้งเตือนผู้ใช้คือ: ${Error_Message}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-10-07T02:38:54.320361" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2024-10-07T02:38:54.297367" elapsed="0.022994"/>
+</kw>
+<kw name="ตรวจสอบตำแหน่ง URL ปัจจุบัน ตรงกับที่ต้องการหรือไม่" owner="login-keywords">
+<kw name="Get Location" owner="SeleniumLibrary">
+<msg time="2024-10-07T02:38:54.326871" level="INFO">${URL_Current} = https://www.saucedemo.com/</msg>
+<var>${URL_Current}</var>
+<doc>Returns the current browser window URL.</doc>
+<status status="PASS" start="2024-10-07T02:38:54.321360" elapsed="0.005511"/>
+</kw>
+<if>
+<branch type="IF" condition="$URL_Current != $URL_Expected">
+<kw name="Fail" owner="BuiltIn">
+<arg>URL ปัจจุบัน ไม่ตรงกับที่ต้องการ</arg>
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<status status="NOT RUN" start="2024-10-07T02:38:54.326871" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2024-10-07T02:38:54.326871" elapsed="0.000000"/>
+</branch>
+<branch type="ELSE">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>message=URL ปัจจุบัน ตรงกับที่ต้องการ: ${URL_Expected}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-10-07T02:38:54.326871" elapsed="0.001001"/>
+</kw>
+<status status="PASS" start="2024-10-07T02:38:54.326871" elapsed="0.001001"/>
+</branch>
+<status status="PASS" start="2024-10-07T02:38:54.326871" elapsed="0.001001"/>
+</if>
+<arg>${URL_Main}</arg>
+<status status="PASS" start="2024-10-07T02:38:54.321360" elapsed="0.006512"/>
+</kw>
+<doc>กรณี ไม่ได้กรอก Username และ Password</doc>
+<status status="PASS" start="2024-10-07T02:38:53.370185" elapsed="0.957687"/>
+</test>
+<test id="s1-t2" name="TC-Login-002: ตรวจสอบ Login" line="20">
+<kw name="เครียร์ข้อมูลช่อง Username และ Password" owner="login-keywords" type="SETUP">
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2024-10-07T02:38:54.330872" level="INFO">Sending key(s) ('CTRL+A', 'BACKSPACE') to id=user-name element.</msg>
+<msg time="2024-10-07T02:38:54.615583" level="INFO">Pressing special key CONTROL down.</msg>
+<msg time="2024-10-07T02:38:54.615583" level="INFO">Sending key A</msg>
+<msg time="2024-10-07T02:38:54.615583" level="INFO">Releasing special key CONTROL.</msg>
+<msg time="2024-10-07T02:38:54.626558" level="INFO">Pressing special key BACKSPACE to element.</msg>
+<msg time="2024-10-07T02:38:54.626558" level="INFO">Releasing special key BACKSPACE.</msg>
+<arg>id=user-name</arg>
+<arg>CTRL+A</arg>
+<arg>BACKSPACE</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2024-10-07T02:38:54.330872" elapsed="0.300935"/>
+</kw>
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2024-10-07T02:38:54.632330" level="INFO">Sending key(s) ('CTRL+A', 'BACKSPACE') to id=password element.</msg>
+<msg time="2024-10-07T02:38:54.924421" level="INFO">Pressing special key CONTROL down.</msg>
+<msg time="2024-10-07T02:38:54.924421" level="INFO">Sending key A</msg>
+<msg time="2024-10-07T02:38:54.924421" level="INFO">Releasing special key CONTROL.</msg>
+<msg time="2024-10-07T02:38:54.938438" level="INFO">Pressing special key BACKSPACE to element.</msg>
+<msg time="2024-10-07T02:38:54.938438" level="INFO">Releasing special key BACKSPACE.</msg>
+<arg>id=password</arg>
+<arg>CTRL+A</arg>
+<arg>BACKSPACE</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2024-10-07T02:38:54.631807" elapsed="0.316611"/>
+</kw>
+<status status="PASS" start="2024-10-07T02:38:54.330872" elapsed="0.617546"/>
+</kw>
+<kw name="พิมพ์ Username และ Password" owner="login-keywords">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-10-07T02:38:54.950418" level="INFO">Typing text 'invalid_user' into text field 'user-name'.</msg>
+<arg>user-name</arg>
+<arg>${Username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-07T02:38:54.949419" elapsed="0.168003"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-10-07T02:38:55.118425" level="INFO">Typing text '' into text field 'password'.</msg>
+<arg>password</arg>
+<arg>${Password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-07T02:38:55.118425" elapsed="0.078996"/>
+</kw>
+<arg>${Username_Invalid}</arg>
+<arg>${EMPTY}</arg>
+<status status="PASS" start="2024-10-07T02:38:54.948418" elapsed="0.249003"/>
+</kw>
+<kw name="คลิกปุ่ม Login" owner="login-keywords">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-10-07T02:38:55.197421" level="INFO">Clicking button 'login-button'.</msg>
+<arg>login-button</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-07T02:38:55.197421" elapsed="0.055998"/>
+</kw>
+<status status="PASS" start="2024-10-07T02:38:55.197421" elapsed="0.055998"/>
+</kw>
+<kw name="ตรวจสอบว่าข้อความแจ้งเตือน ผู้ใช้" owner="login-keywords">
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-10-07T02:38:55.272420" level="INFO">${Error_Message} = Epic sadface: Password is required</msg>
+<var>${Error_Message}</var>
+<arg>css=.error-message-container h3</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-07T02:38:55.254425" elapsed="0.017995"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>message=ข้อความแจ้งเตือนผู้ใช้คือ: ${Error_Message}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-10-07T02:38:55.272420" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2024-10-07T02:38:55.254425" elapsed="0.017995"/>
+</kw>
+<kw name="ตรวจสอบตำแหน่ง URL ปัจจุบัน ตรงกับที่ต้องการหรือไม่" owner="login-keywords">
+<kw name="Get Location" owner="SeleniumLibrary">
+<msg time="2024-10-07T02:38:55.278419" level="INFO">${URL_Current} = https://www.saucedemo.com/</msg>
+<var>${URL_Current}</var>
+<doc>Returns the current browser window URL.</doc>
+<status status="PASS" start="2024-10-07T02:38:55.273419" elapsed="0.005000"/>
+</kw>
+<if>
+<branch type="IF" condition="$URL_Current != $URL_Expected">
+<kw name="Fail" owner="BuiltIn">
+<arg>URL ปัจจุบัน ไม่ตรงกับที่ต้องการ</arg>
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<status status="NOT RUN" start="2024-10-07T02:38:55.278419" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2024-10-07T02:38:55.278419" elapsed="0.000000"/>
+</branch>
+<branch type="ELSE">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>message=URL ปัจจุบัน ตรงกับที่ต้องการ: ${URL_Expected}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-10-07T02:38:55.278419" elapsed="0.001002"/>
+</kw>
+<status status="PASS" start="2024-10-07T02:38:55.278419" elapsed="0.001002"/>
+</branch>
+<status status="PASS" start="2024-10-07T02:38:55.278419" elapsed="0.001002"/>
+</if>
+<arg>${URL_Main}</arg>
+<status status="PASS" start="2024-10-07T02:38:55.273419" elapsed="0.006002"/>
+</kw>
+<doc>กรณี กรอก Username ถูกต้อง และ ไม่ได้กรอก Password</doc>
+<status status="PASS" start="2024-10-07T02:38:54.328872" elapsed="0.950549"/>
+</test>
+<test id="s1-t3" name="TC-Login-003: ตรวจสอบ Login" line="27">
+<kw name="เครียร์ข้อมูลช่อง Username และ Password" owner="login-keywords" type="SETUP">
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2024-10-07T02:38:55.282420" level="INFO">Sending key(s) ('CTRL+A', 'BACKSPACE') to id=user-name element.</msg>
+<msg time="2024-10-07T02:38:55.566813" level="INFO">Pressing special key CONTROL down.</msg>
+<msg time="2024-10-07T02:38:55.567809" level="INFO">Sending key A</msg>
+<msg time="2024-10-07T02:38:55.567809" level="INFO">Releasing special key CONTROL.</msg>
+<msg time="2024-10-07T02:38:55.577292" level="INFO">Pressing special key BACKSPACE to element.</msg>
+<msg time="2024-10-07T02:38:55.577292" level="INFO">Releasing special key BACKSPACE.</msg>
+<arg>id=user-name</arg>
+<arg>CTRL+A</arg>
+<arg>BACKSPACE</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2024-10-07T02:38:55.282420" elapsed="0.304852"/>
+</kw>
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2024-10-07T02:38:55.588270" level="INFO">Sending key(s) ('CTRL+A', 'BACKSPACE') to id=password element.</msg>
+<msg time="2024-10-07T02:38:55.881328" level="INFO">Pressing special key CONTROL down.</msg>
+<msg time="2024-10-07T02:38:55.881328" level="INFO">Sending key A</msg>
+<msg time="2024-10-07T02:38:55.881328" level="INFO">Releasing special key CONTROL.</msg>
+<msg time="2024-10-07T02:38:55.891316" level="INFO">Pressing special key BACKSPACE to element.</msg>
+<msg time="2024-10-07T02:38:55.891316" level="INFO">Releasing special key BACKSPACE.</msg>
+<arg>id=password</arg>
+<arg>CTRL+A</arg>
+<arg>BACKSPACE</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2024-10-07T02:38:55.587272" elapsed="0.311039"/>
+</kw>
+<status status="PASS" start="2024-10-07T02:38:55.281449" elapsed="0.616862"/>
+</kw>
+<kw name="พิมพ์ Username และ Password" owner="login-keywords">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-10-07T02:38:55.900316" level="INFO">Typing text '' into text field 'user-name'.</msg>
+<arg>user-name</arg>
+<arg>${Username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-07T02:38:55.900316" elapsed="0.068562"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-10-07T02:38:55.969919" level="INFO">Typing text 'invalid_password' into text field 'password'.</msg>
+<arg>password</arg>
+<arg>${Password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-07T02:38:55.968878" elapsed="0.139458"/>
+</kw>
+<arg>${EMPTY}</arg>
+<arg>${Password_Invalid}</arg>
+<status status="PASS" start="2024-10-07T02:38:55.899315" elapsed="0.209021"/>
+</kw>
+<kw name="คลิกปุ่ม Login" owner="login-keywords">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-10-07T02:38:56.109337" level="INFO">Clicking button 'login-button'.</msg>
+<arg>login-button</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-07T02:38:56.109337" elapsed="0.064334"/>
+</kw>
+<status status="PASS" start="2024-10-07T02:38:56.109337" elapsed="0.064334"/>
+</kw>
+<kw name="ตรวจสอบว่าข้อความแจ้งเตือน ผู้ใช้" owner="login-keywords">
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-10-07T02:38:56.189671" level="INFO">${Error_Message} = Epic sadface: Username is required</msg>
+<var>${Error_Message}</var>
+<arg>css=.error-message-container h3</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-07T02:38:56.174672" elapsed="0.014999"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>message=ข้อความแจ้งเตือนผู้ใช้คือ: ${Error_Message}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-10-07T02:38:56.189671" elapsed="0.001000"/>
+</kw>
+<status status="PASS" start="2024-10-07T02:38:56.173671" elapsed="0.017000"/>
+</kw>
+<kw name="ตรวจสอบตำแหน่ง URL ปัจจุบัน ตรงกับที่ต้องการหรือไม่" owner="login-keywords">
+<kw name="Get Location" owner="SeleniumLibrary">
+<msg time="2024-10-07T02:38:56.195673" level="INFO">${URL_Current} = https://www.saucedemo.com/</msg>
+<var>${URL_Current}</var>
+<doc>Returns the current browser window URL.</doc>
+<status status="PASS" start="2024-10-07T02:38:56.191671" elapsed="0.004002"/>
+</kw>
+<if>
+<branch type="IF" condition="$URL_Current != $URL_Expected">
+<kw name="Fail" owner="BuiltIn">
+<arg>URL ปัจจุบัน ไม่ตรงกับที่ต้องการ</arg>
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<status status="NOT RUN" start="2024-10-07T02:38:56.195673" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2024-10-07T02:38:56.195673" elapsed="0.000000"/>
+</branch>
+<branch type="ELSE">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>message=URL ปัจจุบัน ตรงกับที่ต้องการ: ${URL_Expected}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-10-07T02:38:56.195673" elapsed="0.000998"/>
+</kw>
+<status status="PASS" start="2024-10-07T02:38:56.195673" elapsed="0.000998"/>
+</branch>
+<status status="PASS" start="2024-10-07T02:38:56.195673" elapsed="0.000998"/>
+</if>
+<arg>${URL_Main}</arg>
+<status status="PASS" start="2024-10-07T02:38:56.190671" elapsed="0.006000"/>
+</kw>
+<doc>กรณี กรอก Password ที่ไม่ถูกต้อง และ ไม่ได้กรอก Username</doc>
+<status status="PASS" start="2024-10-07T02:38:55.280421" elapsed="0.916250"/>
+</test>
+<test id="s1-t4" name="TC-Login-004: ตรวจสอบ Login" line="34">
+<kw name="เครียร์ข้อมูลช่อง Username และ Password" owner="login-keywords" type="SETUP">
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2024-10-07T02:38:56.199673" level="INFO">Sending key(s) ('CTRL+A', 'BACKSPACE') to id=user-name element.</msg>
+<msg time="2024-10-07T02:38:56.487042" level="INFO">Pressing special key CONTROL down.</msg>
+<msg time="2024-10-07T02:38:56.487042" level="INFO">Sending key A</msg>
+<msg time="2024-10-07T02:38:56.487042" level="INFO">Releasing special key CONTROL.</msg>
+<msg time="2024-10-07T02:38:56.494040" level="INFO">Pressing special key BACKSPACE to element.</msg>
+<msg time="2024-10-07T02:38:56.494040" level="INFO">Releasing special key BACKSPACE.</msg>
+<arg>id=user-name</arg>
+<arg>CTRL+A</arg>
+<arg>BACKSPACE</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2024-10-07T02:38:56.199673" elapsed="0.298499"/>
+</kw>
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2024-10-07T02:38:56.499209" level="INFO">Sending key(s) ('CTRL+A', 'BACKSPACE') to id=password element.</msg>
+<msg time="2024-10-07T02:38:56.782646" level="INFO">Pressing special key CONTROL down.</msg>
+<msg time="2024-10-07T02:38:56.782646" level="INFO">Sending key A</msg>
+<msg time="2024-10-07T02:38:56.782646" level="INFO">Releasing special key CONTROL.</msg>
+<msg time="2024-10-07T02:38:56.794620" level="INFO">Pressing special key BACKSPACE to element.</msg>
+<msg time="2024-10-07T02:38:56.794620" level="INFO">Releasing special key BACKSPACE.</msg>
+<arg>id=password</arg>
+<arg>CTRL+A</arg>
+<arg>BACKSPACE</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2024-10-07T02:38:56.498172" elapsed="0.304445"/>
+</kw>
+<status status="PASS" start="2024-10-07T02:38:56.198673" elapsed="0.603944"/>
+</kw>
+<kw name="พิมพ์ Username และ Password" owner="login-keywords">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-10-07T02:38:56.803619" level="INFO">Typing text 'invalid_user' into text field 'user-name'.</msg>
+<arg>user-name</arg>
+<arg>${Username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-07T02:38:56.803619" elapsed="0.124431"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-10-07T02:38:56.928050" level="INFO">Typing text 'invalid_password' into text field 'password'.</msg>
+<arg>password</arg>
+<arg>${Password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-07T02:38:56.928050" elapsed="0.142954"/>
+</kw>
+<arg>${Username_Invalid}</arg>
+<arg>${Password_Invalid}</arg>
+<status status="PASS" start="2024-10-07T02:38:56.802617" elapsed="0.269385"/>
+</kw>
+<kw name="คลิกปุ่ม Login" owner="login-keywords">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-10-07T02:38:57.072002" level="INFO">Clicking button 'login-button'.</msg>
+<arg>login-button</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-07T02:38:57.072002" elapsed="0.061020"/>
+</kw>
+<status status="PASS" start="2024-10-07T02:38:57.072002" elapsed="0.062021"/>
+</kw>
+<kw name="ตรวจสอบว่าข้อความแจ้งเตือน ผู้ใช้" owner="login-keywords">
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-10-07T02:38:57.150973" level="INFO">${Error_Message} = Epic sadface: Username and password do not match any user in this service</msg>
+<var>${Error_Message}</var>
+<arg>css=.error-message-container h3</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-07T02:38:57.134023" elapsed="0.016950"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>message=ข้อความแจ้งเตือนผู้ใช้คือ: ${Error_Message}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-10-07T02:38:57.150973" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2024-10-07T02:38:57.134023" elapsed="0.016950"/>
+</kw>
+<kw name="ตรวจสอบตำแหน่ง URL ปัจจุบัน ตรงกับที่ต้องการหรือไม่" owner="login-keywords">
+<kw name="Get Location" owner="SeleniumLibrary">
+<msg time="2024-10-07T02:38:57.156977" level="INFO">${URL_Current} = https://www.saucedemo.com/</msg>
+<var>${URL_Current}</var>
+<doc>Returns the current browser window URL.</doc>
+<status status="PASS" start="2024-10-07T02:38:57.151974" elapsed="0.005003"/>
+</kw>
+<if>
+<branch type="IF" condition="$URL_Current != $URL_Expected">
+<kw name="Fail" owner="BuiltIn">
+<arg>URL ปัจจุบัน ไม่ตรงกับที่ต้องการ</arg>
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<status status="NOT RUN" start="2024-10-07T02:38:57.157981" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2024-10-07T02:38:57.156977" elapsed="0.001004"/>
+</branch>
+<branch type="ELSE">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>message=URL ปัจจุบัน ตรงกับที่ต้องการ: ${URL_Expected}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-10-07T02:38:57.157981" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2024-10-07T02:38:57.157981" elapsed="0.000000"/>
+</branch>
+<status status="PASS" start="2024-10-07T02:38:57.156977" elapsed="0.001004"/>
+</if>
+<arg>${URL_Main}</arg>
+<status status="PASS" start="2024-10-07T02:38:57.151974" elapsed="0.006007"/>
+</kw>
+<doc>กรณี กรอก Username และ Password ที่ไม่ถูกต้อง</doc>
+<status status="PASS" start="2024-10-07T02:38:56.197672" elapsed="0.961302"/>
+</test>
+<test id="s1-t5" name="TC-Login-005: ตรวจสอบ Login" line="41">
+<kw name="เครียร์ข้อมูลช่อง Username และ Password" owner="login-keywords" type="SETUP">
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2024-10-07T02:38:57.161981" level="INFO">Sending key(s) ('CTRL+A', 'BACKSPACE') to id=user-name element.</msg>
+<msg time="2024-10-07T02:38:57.451823" level="INFO">Pressing special key CONTROL down.</msg>
+<msg time="2024-10-07T02:38:57.451823" level="INFO">Sending key A</msg>
+<msg time="2024-10-07T02:38:57.451823" level="INFO">Releasing special key CONTROL.</msg>
+<msg time="2024-10-07T02:38:57.463837" level="INFO">Pressing special key BACKSPACE to element.</msg>
+<msg time="2024-10-07T02:38:57.463837" level="INFO">Releasing special key BACKSPACE.</msg>
+<arg>id=user-name</arg>
+<arg>CTRL+A</arg>
+<arg>BACKSPACE</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2024-10-07T02:38:57.160974" elapsed="0.312856"/>
+</kw>
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2024-10-07T02:38:57.473830" level="INFO">Sending key(s) ('CTRL+A', 'BACKSPACE') to id=password element.</msg>
+<msg time="2024-10-07T02:38:57.760447" level="INFO">Pressing special key CONTROL down.</msg>
+<msg time="2024-10-07T02:38:57.760447" level="INFO">Sending key A</msg>
+<msg time="2024-10-07T02:38:57.760447" level="INFO">Releasing special key CONTROL.</msg>
+<msg time="2024-10-07T02:38:57.771450" level="INFO">Pressing special key BACKSPACE to element.</msg>
+<msg time="2024-10-07T02:38:57.771450" level="INFO">Releasing special key BACKSPACE.</msg>
+<arg>id=password</arg>
+<arg>CTRL+A</arg>
+<arg>BACKSPACE</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2024-10-07T02:38:57.473830" elapsed="0.307626"/>
+</kw>
+<status status="PASS" start="2024-10-07T02:38:57.160974" elapsed="0.620482"/>
+</kw>
+<kw name="พิมพ์ Username และ Password" owner="login-keywords">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-10-07T02:38:57.783457" level="INFO">Typing text 'standard_user' into text field 'user-name'.</msg>
+<arg>user-name</arg>
+<arg>${Username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-07T02:38:57.782457" elapsed="0.128411"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-10-07T02:38:57.911867" level="INFO">Typing text '' into text field 'password'.</msg>
+<arg>password</arg>
+<arg>${Password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-07T02:38:57.911867" elapsed="0.073097"/>
+</kw>
+<arg>${Username_Valid}</arg>
+<arg>${EMPTY}</arg>
+<status status="PASS" start="2024-10-07T02:38:57.782457" elapsed="0.202507"/>
+</kw>
+<kw name="คลิกปุ่ม Login" owner="login-keywords">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-10-07T02:38:57.985963" level="INFO">Clicking button 'login-button'.</msg>
+<arg>login-button</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-07T02:38:57.985963" elapsed="0.062352"/>
+</kw>
+<status status="PASS" start="2024-10-07T02:38:57.985963" elapsed="0.062352"/>
+</kw>
+<kw name="ตรวจสอบว่าข้อความแจ้งเตือน ผู้ใช้" owner="login-keywords">
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-10-07T02:38:58.062964" level="INFO">${Error_Message} = Epic sadface: Password is required</msg>
+<var>${Error_Message}</var>
+<arg>css=.error-message-container h3</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-07T02:38:58.048315" elapsed="0.014649"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>message=ข้อความแจ้งเตือนผู้ใช้คือ: ${Error_Message}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-10-07T02:38:58.063991" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2024-10-07T02:38:58.048315" elapsed="0.015676"/>
+</kw>
+<kw name="ตรวจสอบตำแหน่ง URL ปัจจุบัน ตรงกับที่ต้องการหรือไม่" owner="login-keywords">
+<kw name="Get Location" owner="SeleniumLibrary">
+<msg time="2024-10-07T02:38:58.070452" level="INFO">${URL_Current} = https://www.saucedemo.com/</msg>
+<var>${URL_Current}</var>
+<doc>Returns the current browser window URL.</doc>
+<status status="PASS" start="2024-10-07T02:38:58.064963" elapsed="0.005489"/>
+</kw>
+<if>
+<branch type="IF" condition="$URL_Current != $URL_Expected">
+<kw name="Fail" owner="BuiltIn">
+<arg>URL ปัจจุบัน ไม่ตรงกับที่ต้องการ</arg>
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<status status="NOT RUN" start="2024-10-07T02:38:58.070452" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2024-10-07T02:38:58.070452" elapsed="0.000000"/>
+</branch>
+<branch type="ELSE">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>message=URL ปัจจุบัน ตรงกับที่ต้องการ: ${URL_Expected}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-10-07T02:38:58.070452" elapsed="0.001001"/>
+</kw>
+<status status="PASS" start="2024-10-07T02:38:58.070452" elapsed="0.001001"/>
+</branch>
+<status status="PASS" start="2024-10-07T02:38:58.070452" elapsed="0.001001"/>
+</if>
+<arg>${URL_Main}</arg>
+<status status="PASS" start="2024-10-07T02:38:58.064963" elapsed="0.006490"/>
+</kw>
+<doc>กรณี กรอก Username ที่ถูกต้อง และ ไม่ได้กรอก Password</doc>
+<status status="PASS" start="2024-10-07T02:38:57.159977" elapsed="0.911476"/>
+</test>
+<test id="s1-t6" name="TC-Login-006: ตรวจสอบ Login" line="48">
+<kw name="เครียร์ข้อมูลช่อง Username และ Password" owner="login-keywords" type="SETUP">
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2024-10-07T02:38:58.074452" level="INFO">Sending key(s) ('CTRL+A', 'BACKSPACE') to id=user-name element.</msg>
+<msg time="2024-10-07T02:38:58.367371" level="INFO">Pressing special key CONTROL down.</msg>
+<msg time="2024-10-07T02:38:58.367371" level="INFO">Sending key A</msg>
+<msg time="2024-10-07T02:38:58.367371" level="INFO">Releasing special key CONTROL.</msg>
+<msg time="2024-10-07T02:38:58.377369" level="INFO">Pressing special key BACKSPACE to element.</msg>
+<msg time="2024-10-07T02:38:58.377369" level="INFO">Releasing special key BACKSPACE.</msg>
+<arg>id=user-name</arg>
+<arg>CTRL+A</arg>
+<arg>BACKSPACE</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2024-10-07T02:38:58.074452" elapsed="0.312950"/>
+</kw>
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2024-10-07T02:38:58.388378" level="INFO">Sending key(s) ('CTRL+A', 'BACKSPACE') to id=password element.</msg>
+<msg time="2024-10-07T02:38:58.673963" level="INFO">Pressing special key CONTROL down.</msg>
+<msg time="2024-10-07T02:38:58.673963" level="INFO">Sending key A</msg>
+<msg time="2024-10-07T02:38:58.673963" level="INFO">Releasing special key CONTROL.</msg>
+<msg time="2024-10-07T02:38:58.682965" level="INFO">Pressing special key BACKSPACE to element.</msg>
+<msg time="2024-10-07T02:38:58.682965" level="INFO">Releasing special key BACKSPACE.</msg>
+<arg>id=password</arg>
+<arg>CTRL+A</arg>
+<arg>BACKSPACE</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2024-10-07T02:38:58.387402" elapsed="0.300563"/>
+</kw>
+<status status="PASS" start="2024-10-07T02:38:58.073452" elapsed="0.614513"/>
+</kw>
+<kw name="พิมพ์ Username และ Password" owner="login-keywords">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-10-07T02:38:58.688989" level="INFO">Typing text '' into text field 'user-name'.</msg>
+<arg>user-name</arg>
+<arg>${Username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-07T02:38:58.688989" elapsed="0.080556"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-10-07T02:38:58.769545" level="INFO">Typing text 'secret_sauce' into text field 'password'.</msg>
+<arg>password</arg>
+<arg>${Password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-07T02:38:58.769545" elapsed="0.118240"/>
+</kw>
+<arg>${EMPTY}</arg>
+<arg>${Password_Valid}</arg>
+<status status="PASS" start="2024-10-07T02:38:58.688989" elapsed="0.198796"/>
+</kw>
+<kw name="คลิกปุ่ม Login" owner="login-keywords">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-10-07T02:38:58.888783" level="INFO">Clicking button 'login-button'.</msg>
+<arg>login-button</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-07T02:38:58.888783" elapsed="0.058538"/>
+</kw>
+<status status="PASS" start="2024-10-07T02:38:58.888783" elapsed="0.058538"/>
+</kw>
+<kw name="ตรวจสอบว่าข้อความแจ้งเตือน ผู้ใช้" owner="login-keywords">
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-10-07T02:38:58.962320" level="INFO">${Error_Message} = Epic sadface: Username is required</msg>
+<var>${Error_Message}</var>
+<arg>css=.error-message-container h3</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-07T02:38:58.947321" elapsed="0.014999"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>message=ข้อความแจ้งเตือนผู้ใช้คือ: ${Error_Message}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-10-07T02:38:58.962320" elapsed="0.001000"/>
+</kw>
+<status status="PASS" start="2024-10-07T02:38:58.947321" elapsed="0.015999"/>
+</kw>
+<kw name="ตรวจสอบตำแหน่ง URL ปัจจุบัน ตรงกับที่ต้องการหรือไม่" owner="login-keywords">
+<kw name="Get Location" owner="SeleniumLibrary">
+<msg time="2024-10-07T02:38:58.968329" level="INFO">${URL_Current} = https://www.saucedemo.com/</msg>
+<var>${URL_Current}</var>
+<doc>Returns the current browser window URL.</doc>
+<status status="PASS" start="2024-10-07T02:38:58.964345" elapsed="0.003984"/>
+</kw>
+<if>
+<branch type="IF" condition="$URL_Current != $URL_Expected">
+<kw name="Fail" owner="BuiltIn">
+<arg>URL ปัจจุบัน ไม่ตรงกับที่ต้องการ</arg>
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<status status="NOT RUN" start="2024-10-07T02:38:58.968329" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2024-10-07T02:38:58.968329" elapsed="0.001000"/>
+</branch>
+<branch type="ELSE">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>message=URL ปัจจุบัน ตรงกับที่ต้องการ: ${URL_Expected}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-10-07T02:38:58.969329" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2024-10-07T02:38:58.969329" elapsed="0.000000"/>
+</branch>
+<status status="PASS" start="2024-10-07T02:38:58.968329" elapsed="0.001000"/>
+</if>
+<arg>${URL_Main}</arg>
+<status status="PASS" start="2024-10-07T02:38:58.963320" elapsed="0.006009"/>
+</kw>
+<doc>กรณี กรอก Password ที่ถูกต้อง และ ไม่ได้กรอก Username</doc>
+<status status="PASS" start="2024-10-07T02:38:58.072453" elapsed="0.896876"/>
+</test>
+<test id="s1-t7" name="TC-Login-007: ตรวจสอบ Login" line="55">
+<kw name="เครียร์ข้อมูลช่อง Username และ Password" owner="login-keywords" type="SETUP">
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2024-10-07T02:38:58.972330" level="INFO">Sending key(s) ('CTRL+A', 'BACKSPACE') to id=user-name element.</msg>
+<msg time="2024-10-07T02:38:59.264049" level="INFO">Pressing special key CONTROL down.</msg>
+<msg time="2024-10-07T02:38:59.264049" level="INFO">Sending key A</msg>
+<msg time="2024-10-07T02:38:59.264049" level="INFO">Releasing special key CONTROL.</msg>
+<msg time="2024-10-07T02:38:59.271266" level="INFO">Pressing special key BACKSPACE to element.</msg>
+<msg time="2024-10-07T02:38:59.271266" level="INFO">Releasing special key BACKSPACE.</msg>
+<arg>id=user-name</arg>
+<arg>CTRL+A</arg>
+<arg>BACKSPACE</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2024-10-07T02:38:58.972330" elapsed="0.302935"/>
+</kw>
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2024-10-07T02:38:59.275265" level="INFO">Sending key(s) ('CTRL+A', 'BACKSPACE') to id=password element.</msg>
+<msg time="2024-10-07T02:38:59.563180" level="INFO">Pressing special key CONTROL down.</msg>
+<msg time="2024-10-07T02:38:59.563180" level="INFO">Sending key A</msg>
+<msg time="2024-10-07T02:38:59.563180" level="INFO">Releasing special key CONTROL.</msg>
+<msg time="2024-10-07T02:38:59.575177" level="INFO">Pressing special key BACKSPACE to element.</msg>
+<msg time="2024-10-07T02:38:59.575177" level="INFO">Releasing special key BACKSPACE.</msg>
+<arg>id=password</arg>
+<arg>CTRL+A</arg>
+<arg>BACKSPACE</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2024-10-07T02:38:59.275265" elapsed="0.309952"/>
+</kw>
+<status status="PASS" start="2024-10-07T02:38:58.971330" elapsed="0.613887"/>
+</kw>
+<kw name="พิมพ์ Username และ Password" owner="login-keywords">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-10-07T02:38:59.586221" level="INFO">Typing text 'standard_user' into text field 'user-name'.</msg>
+<arg>user-name</arg>
+<arg>${Username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-07T02:38:59.585217" elapsed="0.133696"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-10-07T02:38:59.719912" level="INFO">Typing text 'secret_sauce' into text field 'password'.</msg>
+<arg>password</arg>
+<arg>${Password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-07T02:38:59.718913" elapsed="0.126494"/>
+</kw>
+<arg>${Username_Valid}</arg>
+<arg>${Password_Valid}</arg>
+<status status="PASS" start="2024-10-07T02:38:59.585217" elapsed="0.261218"/>
+</kw>
+<kw name="คลิกปุ่ม Login" owner="login-keywords">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-10-07T02:38:59.847436" level="INFO">Clicking button 'login-button'.</msg>
+<arg>login-button</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-07T02:38:59.846435" elapsed="0.072643"/>
+</kw>
+<status status="PASS" start="2024-10-07T02:38:59.846435" elapsed="0.072643"/>
+</kw>
+<kw name="ตรวจสอบตำแหน่ง URL ปัจจุบัน ตรงกับที่ต้องการหรือไม่" owner="login-keywords">
+<kw name="Get Location" owner="SeleniumLibrary">
+<msg time="2024-10-07T02:38:59.927081" level="INFO">${URL_Current} = https://www.saucedemo.com/inventory.html</msg>
+<var>${URL_Current}</var>
+<doc>Returns the current browser window URL.</doc>
+<status status="PASS" start="2024-10-07T02:38:59.920082" elapsed="0.006999"/>
+</kw>
+<if>
+<branch type="IF" condition="$URL_Current != $URL_Expected">
+<kw name="Fail" owner="BuiltIn">
+<arg>URL ปัจจุบัน ไม่ตรงกับที่ต้องการ</arg>
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<status status="NOT RUN" start="2024-10-07T02:38:59.928079" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2024-10-07T02:38:59.927081" elapsed="0.000998"/>
+</branch>
+<branch type="ELSE">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>message=URL ปัจจุบัน ตรงกับที่ต้องการ: ${URL_Expected}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-10-07T02:38:59.928079" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2024-10-07T02:38:59.928079" elapsed="0.000000"/>
+</branch>
+<status status="PASS" start="2024-10-07T02:38:59.927081" elapsed="0.001998"/>
+</if>
+<arg>${URL_After_Login}</arg>
+<status status="PASS" start="2024-10-07T02:38:59.920082" elapsed="0.008997"/>
+</kw>
+<kw name="ออกจากระบบ" owner="common-resources">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-10-07T02:38:59.930078" level="INFO">Clicking button 'id=react-burger-menu-btn'.</msg>
+<arg>id=react-burger-menu-btn</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-07T02:38:59.929079" elapsed="0.072722"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-10-07T02:39:00.502546" level="INFO">Slept 500 milliseconds.</msg>
+<arg>0.5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-10-07T02:39:00.001801" elapsed="0.500745"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-10-07T02:39:00.502546" level="INFO">Clicking element 'id=logout_sidebar_link'.</msg>
+<arg>id=logout_sidebar_link</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-07T02:39:00.502546" elapsed="0.067498"/>
+</kw>
+<status status="PASS" start="2024-10-07T02:38:59.929079" elapsed="0.641964"/>
+</kw>
+<doc>กรณี กรอก Username และ Password ที่ถูกต้อง</doc>
+<status status="PASS" start="2024-10-07T02:38:58.970332" elapsed="1.600711"/>
+</test>
+<kw name="ปิดเบราว์เซอร์" owner="common-resources" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2024-10-07T02:39:00.573041" elapsed="2.161982"/>
+</kw>
+<status status="PASS" start="2024-10-07T02:39:00.573041" elapsed="2.161982"/>
+</kw>
+<status status="PASS" start="2024-10-07T02:38:50.987018" elapsed="11.748005"/>
+</suite>
+<statistics>
+<total>
+<stat pass="7" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="7" fail="0" skip="0" id="s1" name="Login-Test">Login-Test</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2024-10-07T02:38:51.601532" level="WARN">The chromedriver version (128.0.6613.120) detected in PATH at C:\webdrivers\chromedriver.exe might not be compatible with the detected chrome version (129.0.6668.90); currently, chromedriver 129.0.6668.89 is recommended for chrome 129.*, so it is advised to delete the driver in PATH and retry</msg>
+</errors>
+</robot>
